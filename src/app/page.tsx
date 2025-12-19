@@ -4,6 +4,7 @@ import { useReadContract } from "thirdweb/react";
 import { client } from "./client";
 import { bscTestnet } from "thirdweb/chains";
 import { CROWDFUNDING_FACTORY } from "./constants/contracts";
+import CampaignCard from "./Components/CampaignCard";
 
 export default function Home() {
   const contract = getContract({
@@ -28,9 +29,10 @@ export default function Home() {
               {!isPending && campaigns && (
                 campaigns.length > 0 ? (
                   campaigns.map((campaign) => (
-                  <div>
-                    <p>Campaign</p>
-                  </div>
+                    <CampaignCard
+                      key={campaign.campaignAddress}
+                      campaignAddress={campaign.campaignAddress}
+                    />
                 ))
                 ) : (
                   <p>No campaigns found</p>
