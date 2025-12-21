@@ -23,7 +23,7 @@ O projeto utiliza o **Padrão Factory (Fábrica)**, uma das melhores práticas e
 - **Pausa de Emergência**: O dono da Factory pode pausar novas criações em caso de manutenção.
 
 # 🚀 Web3 Crowdfunding Platform
-**Live Demo:** [https://web3cfapp-sandy.vercel.app](https://seu-projeto.vercel.app)
+**Live Demo:** [https://web3cfapp-sandy.vercel.app](https://web3cfapp-sandy.vercel.app)
 
 ## 🚀 Como Executar
 1. Clone o repositório.
