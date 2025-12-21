@@ -1,58 +1,33 @@
-![tw-banner](https://github.com/thirdweb-example/next-starter/assets/57885104/20c8ce3b-4e55-4f10-ae03-2fe4743a5ee8)
+# 🚀 Web3 Crowdfunding Platform (Factory Pattern)
 
-# thirdweb-next-starter
+Uma plataforma descentralizada de financiamento coletivo que permite a criação de campanhas individuais de arrecadação utilizando contratos inteligentes na rede **Binance Smart Chain (Testnet)**.
 
-Starter template to build an onchain react native app with [thirdweb](https://thirdweb.com/) and [next](https://nextjs.org/).
+## 🛠 Tecnologias Utilizadas
+- **Blockchain**: Solidity, Binance Smart Chain (BSC).
+- **Frontend**: Next.js, TypeScript, Tailwind CSS.
+- **Web3 Stack**: Thirdweb SDK v5 (Connect Wallet, Deploy Engine).
+- **Infraestrutura**: Vercel (Deployment).
 
-## Installation
+## 🏗 Arquitetura do Projeto
+O projeto utiliza o **Padrão Factory (Fábrica)**, uma das melhores práticas em Solidity para escalabilidade e segurança:
 
-Install the template using [thirdweb create](https://portal.thirdweb.com/cli/create)
+1.  **CrowdfundingFactory.sol**: Atua como o contrato mestre. Ele gerencia a criação de novas campanhas e mantém um registro centralizado de todos os endereços criados.
+2.  **Crowdfunding.sol**: O contrato lógico da campanha. Cada vez que um usuário cria uma campanha, o Factory faz o deploy de uma nova instância deste contrato, garantindo que os fundos de uma campanha sejam isolados das outras.
 
-```bash
-  npx thirdweb create app --next
-```
 
-## Environment Variables
 
-To run this project, you will need to add the following environment variables to your .env file:
+## 🌟 Funcionalidades Principais
+- **Criação Dinâmica**: Usuários podem definir nome, descrição, meta (Goal) e prazo (Deadline).
+- **Contribuições Transparentes**: Doações rastreáveis on-chain com verificação de metas.
+- **Sistema de Saque Seguro**: O proprietário só pode sacar os fundos se a meta for atingida e o prazo expirado (`checkAndUpdateCampaignState`).
+- **Pausa de Emergência**: O dono da Factory pode pausar novas criações em caso de manutenção.
 
-`CLIENT_ID`
+## 🚀 Como Executar
+1. Clone o repositório.
+2. Instale as dependências: `npm install`.
+3. Configure o `.env.local` com seu `NEXT_PUBLIC_TEMPLATE_CLIENT_ID` da Thirdweb.
+4. Execute o projeto: `npm run dev`.
 
-To learn how to create a client ID, refer to the [client documentation](https://portal.thirdweb.com/typescript/v5/client).
-
-## Run locally
-
-Install dependencies
-
-```bash
-yarn
-```
-
-Start development server
-
-```bash
-yarn dev
-```
-
-Create a production build
-
-```bash
-yarn build
-```
-
-Preview the production build
-
-```bash
-yarn start
-```
-
-## Resources
-
-- [Documentation](https://portal.thirdweb.com/typescript/v5)
-- [Templates](https://thirdweb.com/templates)
-- [YouTube](https://www.youtube.com/c/thirdweb)
-- [Blog](https://blog.thirdweb.com)
-
-## Need help?
-
-For help or feedback, please [visit our support site](https://thirdweb.com/support)
+## 📄 Contratos Publicados (Testnet)
+- **Factory Address**: `0x214e2566df210d5466c827a090b0959bdadf0a2c`
+- **Link Explorer**: [BscScan Testnet](https://testnet.bscscan.com/address/0x214E2566dF210D5466c827A090b0959BDAdF0a2c)
