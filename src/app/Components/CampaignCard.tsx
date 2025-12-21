@@ -2,6 +2,8 @@ import { getContract } from "thirdweb";
 import { client } from "../client";
 import { bscTestnet } from "thirdweb/chains";
 import { useReadContract } from "thirdweb/react";
+import { ArrowRight } from "feather-icons-react";
+import Link from "next/link";
 
 type CampaignCardProps = {
   campaignAddress: string;
@@ -69,6 +71,10 @@ export default function CampaignCard({ campaignAddress }: CampaignCardProps) {
         </h5>
         <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">{campaignDescription}</p>
       </div>
+      <Link href={`/campaign/${campaignAddress}`} passHref={true}>
+        <p className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-slate-800">View Campaign &nbsp;<ArrowRight size={20} color="currentColor" /></p>
+        
+      </Link>
     </div>
   );
 }
