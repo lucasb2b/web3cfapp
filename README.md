@@ -22,6 +22,9 @@ O projeto utiliza o **Padrão Factory (Fábrica)**, uma das melhores práticas e
 - **Sistema de Saque Seguro**: O proprietário só pode sacar os fundos se a meta for atingida e o prazo expirado (`checkAndUpdateCampaignState`).
 - **Pausa de Emergência**: O dono da Factory pode pausar novas criações em caso de manutenção.
 
+# 🚀 Web3 Crowdfunding Platform
+**Live Demo:** [https://web3cfapp-sandy.vercel.app](https://seu-projeto.vercel.app)
+
 ## 🚀 Como Executar
 1. Clone o repositório.
 2. Instale as dependências: `npm install`.
